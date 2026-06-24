@@ -29,6 +29,81 @@ def run_quiz(title, questions):
         print("\nNo weak areas today. Great job!")
 
 
+def agent_mode():
+    topic = input("\nWhat are you confused about? ").lower()
+
+    if "loop" in topic:
+        print("\nLOOPS EXPLAINED")
+        print("----------------")
+        print("A loop repeats code multiple times.")
+
+        print("\nExample:")
+        print("for number in range(5):")
+        print("    print(number)")
+
+        print("\nThis prints:")
+        print("0")
+        print("1")
+        print("2")
+        print("3")
+        print("4")
+
+        answer = input("\nPractice: What keyword starts a for loop? ").strip().lower()
+
+        if answer == "for":
+            print("Correct!")
+        else:
+            print("Not quite. The answer is: for")
+
+    elif "function" in topic:
+        print("\nFUNCTIONS EXPLAINED")
+        print("-------------------")
+        print("A function is a reusable block of code.")
+
+        print("\nExample:")
+        print("def greet():")
+        print("    print('Hello')")
+
+        answer = input("\nPractice: What keyword creates a function? ").strip().lower()
+
+        if answer == "def":
+            print("Correct!")
+        else:
+            print("Not quite. The answer is: def")
+
+    elif "variable" in topic:
+        print("\nVARIABLES EXPLAINED")
+        print("-------------------")
+        print("A variable stores information you can use later.")
+
+        print("\nExample:")
+        print("name = 'Orlando'")
+        print("print(name)")
+
+        answer = input("\nPractice: What symbol assigns a value to a variable? ").strip()
+
+        if answer == "=":
+            print("Correct!")
+        else:
+            print("Not quite. The answer is: =")
+
+    else:
+        print("\nI don't know that topic yet.")
+        print("Try typing: Python loops, functions, or variables.")
+
+
+def study_mode():
+    topic = input("\nWhat topic are you studying? ")
+
+    print("\nStudy Companion Plan")
+    print("--------------------")
+    print("Topic:", topic)
+    print("1. Explain the topic in simple words")
+    print("2. Show one example")
+    print("3. Ask one practice question")
+    print("4. Review what you got wrong")
+
+
 def python_quiz():
     questions = [
         {
@@ -79,39 +154,30 @@ def drivers_test_quiz():
     run_quiz("Driver's Test Quiz", questions)
 
 
-def study_mode():
-    topic = input("\nWhat topic are you studying? ")
-
-    print("\nStudy Companion Plan")
-    print("--------------------")
-    print("Topic:", topic)
-    print("1. Explain the topic in simple words")
-    print("2. Show one example")
-    print("3. Ask one practice question")
-    print("4. Review what you got wrong")
-
-
 def main():
     while True:
-        print("\n=== AI Study Companion v3 ===")
-        print("1. Study Mode")
-        print("2. Python Quiz")
-        print("3. Driver's Test Quiz")
-        print("4. Exit")
+        print("\n=== AI Study Companion v5 ===")
+        print("1. Agent Mode")
+        print("2. Study Mode")
+        print("3. Python Quiz")
+        print("4. Driver's Test Quiz")
+        print("5. Exit")
 
         choice = input("\nChoose an option: ")
 
         if choice == "1":
-            study_mode()
+            agent_mode()
         elif choice == "2":
-            python_quiz()
+            study_mode()
         elif choice == "3":
-            drivers_test_quiz()
+            python_quiz()
         elif choice == "4":
+            drivers_test_quiz()
+        elif choice == "5":
             print("Good job studying today.")
             break
         else:
-            print("Invalid choice. Choose 1, 2, 3, or 4.")
+            print("Invalid choice. Choose 1, 2, 3, 4, or 5.")
 
 
 main()
