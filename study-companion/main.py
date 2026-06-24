@@ -1,14 +1,24 @@
 def study_companion():
     print("=== AI Study Companion ===")
+    print("1. Python Study")
+    print("2. Driver's Test Study")
+    print("3. Quiz Mode")
 
-    topic = input("What topic do you need help with? ")
+    choice = input("\nChoose an option: ")
 
-    print("\nLet's study:", topic)
+    if choice == "1":
+        topic = input("What Python topic do you need help with? ")
+        print(f"\nStudy Topic: {topic}")
+        print("Review examples and practice problems.")
 
-    print("\nStudy Plan")
-    print("1. Learn the concept")
-    print("2. Review examples")
-    print("3. Practice problems")
-    print("4. Take a quiz")
+    elif choice == "2":
+        print("\nDriver's Test Mode")
+        print("Study road signs, right-of-way, and parking rules.")
+
+    elif choice == "3":
+        print("\nQuiz Mode Coming Soon!")
+
+    else:
+        print("Invalid choice.")
 
 study_companion()
